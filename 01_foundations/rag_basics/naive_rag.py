@@ -1,3 +1,11 @@
+"""
+ Naive RAG (Keyword Retrieval) - Hello World of RAG
+
+Purpose: Demonstrates the 'Context Injection' pattern. 
+Limitation: Uses hardcoded keyword matching ('if code in input'). 
+Future: Will replace keyword matching with Vector Embeddings for semantic retrieval.
+"""
+
 import os
 import openai
 from dotenv import load_dotenv
