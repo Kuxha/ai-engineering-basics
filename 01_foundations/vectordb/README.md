@@ -1,0 +1,1 @@
+Used ChromaDB for persistent storage.  this allows the app to handle millions of documents by using Approximate Nearest Neighbor (ANN) search."
