@@ -1,1 +1,0 @@
-retrieval-augmented generation system that grounds LLM responses in factual documents (my resume). Tech Stack: ChromaDB (Vector Store), OpenAI (Generation), Python. Key Feature: Includes "Source Citation" in the debug stream to verify no hallucinations.

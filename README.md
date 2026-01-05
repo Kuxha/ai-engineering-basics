@@ -1,7 +1,32 @@
 # The AI Engineering Handbook 🛠️
 
 **Goal:** A ground-up implementation of the modern AI Engineering stack, moving from basic prompting to autonomous MCP agents.
-**Focus:** Reliability, System Design, and "Systems of Action" (not just Chatbots).
+**Focus:** Reliability, System Design, and building "Systems of Action" rather than just Chatbots.
+
+> **Transparency Note:** This repository was built with the assistance of Google's Gemini, acting as a pair programmer and technical coach to structure the learning path and refine the code patterns.
+
+---
+
+## 📖 Why AI Engineering?
+Most people stop at "Prompt Engineering"—typing text into ChatGPT.
+**AI Engineering** is different. It is the discipline of treating Large Language Models (LLMs) not as magic boxes, but as **software components**.
+
+This repository is a self-study guide designed to answer:
+* How do we stop LLMs from hallucinating? (RAG)
+* How do we connect them to our own database? (Tools)
+* How do we build systems that can fix their own mistakes? (Agents)
+* How do we deploy this to production reliably? (Evals & Ops)
+
+---
+
+## 🗺️ The Roadmap Philosophy
+This curriculum follows a strict **"Crawl, Walk, Run"** progression. We do not jump straight to complex Agents because they are impossible to debug without strong foundations.
+
+1.  **Phase 1 (The Brain):** We treat the LLM as a passive knowledge engine. We focus on controlling *what it knows* (RAG) and *how it speaks* (Prompting).
+2.  **Phase 2 (The Hands):** We give the LLM the ability to *touch* the real world. We focus on **Determinism**—ensuring that when the AI tries to run code, it runs safely and predictably.
+3.  **Phase 3 (The Logic):** We build the "Cortex." Simple scripts become **Graphs**. We handle loops, retries, and failures (e.g., "The API is down, what now?").
+4.  **Phase 4 (The Protocol):** We standardize everything using **MCP (Model Context Protocol)**, the industry standard for connecting AI to systems.
+5.  **Phase 5 (Production):** We treat it like real software. Testing, Caching, and Architecture.
 
 ---
 
@@ -55,14 +80,14 @@
 
 ---
 
-## 💎 Phase 5: Production & Evals (Seniority)
-*Goal: Testing, Optimization, and Documentation.*
+## 💎 Phase 5: Production Engineering (Scale)
+*Goal: Testing, Optimization, and ensuring system reliability.*
 
 | Part | Topic | Engineering Pattern |
 | :--- | :--- | :--- |
 | **01** | **Evals** | **Unit Testing**: Deterministic grading of non-deterministic AI outputs. |
 | **02** | **Optimization** | **Caching**: Reducing latency and cost for repeated queries. |
-| **03** | **Interview** | **System Design**: Mock interview simulation and architecture defense. |
+| **03** | **System Design** | **Architecture**: Designing scalable agent systems for high-load environments. |
 
 ---
 

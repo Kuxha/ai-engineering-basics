@@ -1,1 +1,0 @@
-This system uses Semantic Search. this system identifies that 'feline' and 'cat' are related (Similarity > 0.6) because their vector representations are close in the latent space.
