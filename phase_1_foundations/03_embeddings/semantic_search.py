@@ -1,19 +1,42 @@
-# Module 3: Text Embeddings (Semantic Search)
+import os
+import numpy as np
+from openai import OpenAI
+from dotenv import load_dotenv
+from sklearn.metrics.pairwise import cosine_similarity
 
-**Phase 1 Status:** 📐 The Math Upgrade (3/5)
+load_dotenv()
+client = OpenAI()
 
-## 📖 The Story So Far
-In Module 2, we gave the AI access to secret data, but our search logic was dumb. We were using `if "keyword" in string`. This meant that if a user asked for "Feline" but our document said "Cat," the system failed. Human language is too complex for simple keyword matching.
+def get_embedding(text):
+    """Generates vector for a given text."""
+    response = client.embeddings.create(
+        input=text,
+        model="text-embedding-3-small"
+    )
+    return response.data[0].embedding
 
-## 🚧 The Problem
-**Keywords miss the Meaning.**
-We need a way for the computer to understand that "Password", "Secret", and "Code" are all talking about the same thing, even if the letters are completely different.
+def main():
+ 
+    documents = [
+        "The cat sits on the mat",
+        "A dog chases the ball",
+        "The software engineer writes python",
+        "I love eating pizza"
+    ]
+    
 
-## 🛠️ The Solution: Embeddings (Vectors)
-We stopped comparing strings and started comparing **Concepts**.
-An "Embedding" turns text into a list of numbers (a Vector). Ideally, the numbers for "Cat" and "Feline" will be mathematically close to each other.
+    query = "A feline is resting" 
+    
+    print(f"Query: '{query}'\n")
 
-**In this code (`semantic_search.py`):**
-1.  We convert sentences into Vectors using OpenAI.
-2.  We use **Cosine Similarity** to calculate the angle between them.
-3.  We prove that "A feline is resting" is a 90% match for "The cat is on the mat," solving the synonym problem completely.
+    # 3. Vectorize everything
+    query_vec = get_embedding(query)
+    doc_vecs = [get_embedding(doc) for doc in documents]
+
+    similarities = cosine_similarity([query_vec], doc_vecs)[0]
+
+    for i, doc in enumerate(documents):
+        print(f"Doc: '{doc}' | Similarity: {similarities[i]:.4f}")
+
+if __name__ == "__main__":
+    main()
