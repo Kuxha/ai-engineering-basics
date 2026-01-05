@@ -33,3 +33,6 @@ Step 2: AI gets "USR-100" and realizes it can now check the order.
 
 Step 3: AI gets the order status and answers the user.
 > Agent: The latest order for Alice is a Laptop, and it has been Shipped.
+
+
+![alt text](screenshot.png)
