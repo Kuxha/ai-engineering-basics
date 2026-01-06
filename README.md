@@ -3,7 +3,7 @@
 **Goal:** A ground-up implementation of the modern AI Engineering stack, moving from basic prompting to autonomous MCP agents.
 **Focus:** Reliability, System Design, and building "Systems of Action" rather than just Chatbots.
 
-> **Transparency Note:** This repository was built with the assistance of Google's Gemini, acting as a pair programmer and technical coach to structure the learning path and refine the code patterns.
+> **Transparency Note:** This repository was built with the assistance of Google's Gemini, acting as a pair programmer and technical coach.
 
 ---
 
@@ -19,14 +19,39 @@ This repository is a self-study guide designed to answer:
 
 ---
 
+## 🛠️ Setup & Installation
+Follow these steps to configure your environment for all phases.
+
+**1. Clone and Configure Environment**
+```
+    # Create a virtual environment
+    python3 -m venv .venv
+
+    # Activate it (Mac/Linux)
+    source .venv/bin/activate
+    # Activate it (Windows)
+    .venv\Scripts\activate
+```
+**2. Install Dependencies**
+```
+    pip install openai chromadb python-dotenv pydantic colorama
+```
+**3. Set API Keys**
+Create a file named `.env` in the root folder and add your OpenAI key:
+```
+    OPENAI_API_KEY=sk-proj-xxxxxxxxxxxxxxxxxxx
+```
+---
+
 ## 🗺️ The Roadmap Philosophy
 This curriculum follows a strict **"Crawl, Walk, Run"** progression. We do not jump straight to complex Agents because they are impossible to debug without strong foundations.
 
 1.  **Phase 1 (The Brain):** We treat the LLM as a passive knowledge engine. We focus on controlling *what it knows* (RAG) and *how it speaks* (Prompting).
 2.  **Phase 2 (The Hands):** We give the LLM the ability to *touch* the real world. We focus on **Determinism**—ensuring that when the AI tries to run code, it runs safely and predictably.
-3.  **Phase 3 (The Logic):** We build the "Cortex." Simple scripts become **Graphs**. We handle loops, retries, and failures (e.g., "The API is down, what now?").
-4.  **Phase 4 (The Protocol):** We standardize everything using **MCP (Model Context Protocol)**, the industry standard for connecting AI to systems.
-5.  **Phase 5 (Production):** We treat it like real software. Testing, Caching, and Architecture.
+3.  **Phase 3 (The Application):** We combine Brain and Hands. We build **Agentic RAG**, where the AI uses Search as a Tool, cites its sources, and evaluates its own answers.
+4.  **Phase 4 (The Logic):** We build the "Cortex." Simple scripts become **Graphs**. We handle loops, retries, and failures (e.g., "The API is down, what now?").
+5.  **Phase 5 (The Protocol):** We standardize everything using **MCP (Model Context Protocol)**, the industry standard for connecting AI to systems.
+6.  **Phase 6 (Production):** We treat it like real software. Testing, Caching, and Architecture.
 
 ---
 
@@ -56,7 +81,19 @@ This curriculum follows a strict **"Crawl, Walk, Run"** progression. We do not j
 
 ---
 
-## 🕸️ Phase 3: Orchestration (The Logic)
+## 🧠 Phase 3: Agentic RAG (The Application)
+*Goal: Building systems that can research, reason, and cite evidence.*
+
+| Part | Topic | Engineering Pattern |
+| :--- | :--- | :--- |
+| **01** | **RAG Tool** | **Dynamic Retrieval**: Wrapping Vector Search into a callable Tool so the Agent decides *when* to search. |
+| **02** | **Hybrid Agents** | **Multi-Tool Routing**: An agent that can dynamically switch between Math (Calculator) and Search (RAG). |
+| **03** | **Citations** | **Grounding**: Injecting source metadata into the context to force evidence-based answers. |
+| **04** | **Auto-Evals** | **LLM-as-a-Judge**: Building automated unit tests to grade the agent's accuracy and citations. |
+
+---
+
+## 🕸️ Phase 4: Orchestration (The Logic)
 *Goal: Building complex, self-correcting workflows that can recover from failure.*
 
 | Part | Topic | Engineering Pattern |
@@ -68,7 +105,7 @@ This curriculum follows a strict **"Crawl, Walk, Run"** progression. We do not j
 
 ---
 
-## 🔌 Phase 4: The MCP Protocol (Specialist Track)
+## 🔌 Phase 5: The MCP Protocol (Specialist Track)
 *Goal: Mastering Anthropic's Model Context Protocol for standardizing AI connections.*
 
 | Part | Topic | Engineering Pattern |
@@ -80,13 +117,13 @@ This curriculum follows a strict **"Crawl, Walk, Run"** progression. We do not j
 
 ---
 
-## 💎 Phase 5: Production Engineering (Scale)
+## 💎 Phase 6: Production Engineering (Scale)
 *Goal: Testing, Optimization, and ensuring system reliability.*
 
 | Part | Topic | Engineering Pattern |
 | :--- | :--- | :--- |
-| **01** | **Evals** | **Unit Testing**: Deterministic grading of non-deterministic AI outputs. |
-| **02** | **Optimization** | **Caching**: Reducing latency and cost for repeated queries. |
+| **01** | **Evals** | **Deep Dive**: Advanced metrics (RAGAS) and continuous evaluation pipelines. |
+| **02** | **Optimization** | **Caching**: Semantic caching to reduce latency and cost for repeated queries. |
 | **03** | **System Design** | **Architecture**: Designing scalable agent systems for high-load environments. |
 
 ---
@@ -95,4 +132,4 @@ This curriculum follows a strict **"Crawl, Walk, Run"** progression. We do not j
 * **Languages:** Python (Strict Type Hinting)
 * **Models:** GPT-4o-mini, text-embedding-3-small
 * **Infrastructure:** ChromaDB, OpenAI SDK
-* **Frameworks:** LangChain, LangGraph, Pydantic, FastMCP
+* **Frameworks:** LangGraph, Pydantic, FastMCP
