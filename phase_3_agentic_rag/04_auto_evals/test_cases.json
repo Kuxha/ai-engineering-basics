@@ -1,0 +1,17 @@
+[
+    {
+        "question": "Can I work from home on Friday?",
+        "expected_fact": "No, Friday is a mandatory in-office day.",
+        "expected_citation": "Policy #1"
+    },
+    {
+        "question": "Can I expense my lunch?",
+        "expected_fact": "No, unless it is a client meeting.",
+        "expected_citation": "Policy #2"
+    },
+    {
+        "question": "How much PTO do I have?",
+        "expected_fact": "It is unlimited but subject to approval.",
+        "expected_citation": "Policy #3"
+    }
+]
