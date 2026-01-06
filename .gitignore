@@ -3,3 +3,8 @@
 .ipynb_checkpoints
 __pycache__/
 *.pyc
+
+# SQLite Databases (LangGraph Checkpoints)
+*.sqlite
+*.sqlite-shm
+*.sqlite-wal
