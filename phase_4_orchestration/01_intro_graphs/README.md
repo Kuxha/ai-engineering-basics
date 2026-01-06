@@ -87,4 +87,4 @@ This line creates the **Roomba effect**. It says: "After you finish using a tool
 
 ## 🔮 What's Next?
 Now that we have a brain that can loop, we need to give it **Long-Term Memory**.
-Currently, if you restart the script, the bot forgets everything. In **Day 16**, we will add **Persistence (SQLite)** so the Roomba remembers where it has already cleaned.
+Currently, if you restart the script, the bot forgets everything. Next we will add **Persistence (SQLite)** so the Roomba remembers where it has already cleaned.

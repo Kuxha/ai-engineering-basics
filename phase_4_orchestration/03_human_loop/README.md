@@ -80,6 +80,6 @@ We have now mastered:
 3.  **Safety** (Human-in-the-Loop)
 
 We are ready for the **Phase 4 Capstone: The Shift Orchestrator**.
-We will combine Pydantic (Structured Data), Deterministic Tools (Routing), and Human-in-the-Loop (Compliance) to build a production-grade system similar to Arya Health's architecture.
+We will combine Pydantic (Structured Data), Deterministic Tools (Routing), and Human-in-the-Loop (Compliance) to build a production-grade system
 
 ![alt text](image.png)
