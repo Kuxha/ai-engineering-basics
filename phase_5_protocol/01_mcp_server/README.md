@@ -21,7 +21,7 @@ This server exposes:
 2.  **Resources:** Read-only logs (`shift://logs`).
 
 **File:** `phase_5_protocol/nurse_server.py`
-
+```
     from typing import List, Dict
     from fastmcp import FastMCP
     
@@ -62,7 +62,7 @@ This server exposes:
 
     if __name__ == "__main__":
         mcp.run()
-
+```
 ---
 
 ## 3. How to Run & Verify
