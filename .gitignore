@@ -8,3 +8,6 @@ __pycache__/
 *.sqlite
 *.sqlite-shm
 *.sqlite-wal
+
+
+.secrets
