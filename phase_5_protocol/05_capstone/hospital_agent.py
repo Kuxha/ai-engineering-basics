@@ -86,8 +86,8 @@ async def main():
     # Define the server we want to talk to
     server_params = StdioServerParameters(
         command="python",
-        args=["phase_5_protocol/05_capstone/hospital_server.py"], # Path to your server script
-        env=os.environ.copy() # Pass env vars (like OpenAI Keys)
+        args=["phase_5_protocol/05_capstone/hospital_server.py"],
+        env=os.environ.copy()
     )
 
     # Establish the MCP connection via Stdio
@@ -105,13 +105,15 @@ async def main():
             deps = HospitalDeps(mcp_session=session)
             result = await agent.run(query, deps=deps)
 
-            # Print the Structured Result
+            # --- THE FIX: Use result.output instead of result.data ---
+            output = result.output 
+            
             print("\n--- TRIAGE REPORT ---")
-            print(f"Summary: {result.data.summary}")
-            print(f"Success: {result.data.booking_success}")
-            if result.data.booking_success:
-                print(f"Doctor:  {result.data.doctor_name}")
-                print(f"Time:    {result.data.slot_time}")
+            print(f"Summary: {output.summary}")
+            print(f"Success: {output.booking_success}")
+            if output.booking_success:
+                print(f"Doctor:  {output.doctor_name}")
+                print(f"Time:    {output.slot_time}")
 
 if __name__ == "__main__":
     asyncio.run(main())
