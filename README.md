@@ -93,8 +93,8 @@ This curriculum follows a strict **"Crawl, Walk, Run"** progression. We do not j
 | Part | Topic | Engineering Pattern |
 | :--- | :--- | :--- |
 | **01** | **RAG Tool** | **Dynamic Retrieval**: Wrapping Vector Search into a callable Tool so the Agent decides *when* to search. |
-| **02** | **The Search Layer** | **Tavily AI**: Integrating a specialized LLM search engine to fetch clean, real-time web context (replacing Google Search). |
-| **03** | **Hybrid Agents** | **Multi-Tool Routing**: An agent that can dynamically switch between Math (Calculator) and Search (Tavily). |
+| **02** | **Hybrid Agents** | **Multi-Tool Routing**: An agent that can dynamically switch between Math (Calculator) and Search (RAG). |
+| **03** | **Citations** | **Grounding**: Injecting source metadata into the context to force evidence-based answers. |
 | **04** | **Auto-Evals** | **LLM-as-a-Judge**: Building automated unit tests to grade the agent's accuracy and citations. |
 
 ---
@@ -104,7 +104,7 @@ This curriculum follows a strict **"Crawl, Walk, Run"** progression. We do not j
 
 | Part | Topic | Engineering Pattern |
 | :--- | :--- | :--- |
-| **01** | **LangGraph** | **State Machines**: Moving beyond linear chains to Cyclic Graphs that support loops and retries. |
+| **01** | **LangGraph** | **Cyclic Graphs**: Enabling loops and retries (e.g., "Try again if error"). |
 | **02** | **Persistence** | **Checkpointing**: Saving the agent's state to a SQLite database so it can resume later. |
 | **03** | **Human-in-Loop** | **Approval Flows**: Pausing execution for human review before sensitive actions. |  
 | **04** | **Capstone 2** | **The Shift Orchestrator**: A semi-autonomous agent that extracts strict constraints and routes tasks to deterministic solvers (Supervisor Pattern). |
